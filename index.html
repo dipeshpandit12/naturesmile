@@ -36,25 +36,34 @@
     <div class="popup">
         <h1>Website Under Maintenance</h1>
         <p>We apologize for the inconvenience.</p>
-        <p>The website will be live again in <span id="countdown" class="countdown">3 hours</span>.</p>
+        <p>The website will be live again at 12:00 AM, November 17, Nepal Standard Time.</p>
+        <p>Remaining time: <span id="countdown" class="countdown"></span></p>
     </div>
 
     <script>
-        // Countdown timer
-        var countdownElement = document.getElementById('countdown');
-        var countdownTime = 3 * 60 * 60; // 3 hours in seconds
+        // Retrieve target date from localStorage or set a default value
+        var targetDate = localStorage.getItem('targetDate');
+        if (!targetDate) {
+            targetDate = new Date("November 17, 2023 00:00:00 GMT+0545");
+            localStorage.setItem('targetDate', targetDate);
+        } else {
+            targetDate = new Date(targetDate);
+        }
 
         function updateCountdown() {
-            var hours = Math.floor(countdownTime / 3600);
-            var minutes = Math.floor((countdownTime % 3600) / 60);
-            var seconds = countdownTime % 60;
+            var currentDate = new Date();
+            var timeDifference = targetDate - currentDate;
 
-            countdownElement.textContent = hours + ' hours ' + minutes + ' minutes ' + seconds + ' seconds';
-
-            if (countdownTime <= 0) {
-                document.body.innerHTML = '<h1>Website Live Now!</h1>';
+            if (timeDifference <= 0) {
+                document.getElementById('countdown').textContent = 'Website Live Now!';
             } else {
-                countdownTime--;
+                var hours = Math.floor(timeDifference / (1000 * 60 * 60));
+                var minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+                document.getElementById('countdown').textContent =
+                    hours + ' hours ' + minutes + ' minutes ' + seconds + ' seconds';
+
                 setTimeout(updateCountdown, 1000);
             }
         }
