@@ -36,7 +36,7 @@
     <div class="popup">
         <h1>Website Under Maintenance</h1>
         <p>We apologize for the inconvenience.</p>
-        <p>The website will be live again at 12:00 AM, November 17, Nepal Standard Time.</p>
+        <p>The website will be live again at 12:00 AM, November 18, Nepal Standard Time.</p>
         <p>Remaining time: <span id="countdown" class="countdown"></span></p>
     </div>
 
@@ -44,7 +44,7 @@
         // Retrieve target date from localStorage or set a default value
         var targetDate = localStorage.getItem('targetDate');
         if (!targetDate) {
-            targetDate = new Date("November 17, 2023 00:00:00 GMT+0545");
+            targetDate = new Date("November 18, 2023 00:00:00 GMT+0545");
             localStorage.setItem('targetDate', targetDate);
         } else {
             targetDate = new Date(targetDate);
