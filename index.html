@@ -1,1 +1,66 @@
-hlo
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Under Maintenance</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .popup {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .countdown {
+            font-size: 1.2em;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="popup">
+        <h1>Website Under Maintenance</h1>
+        <p>We apologize for the inconvenience.</p>
+        <p>The website will be live again in <span id="countdown" class="countdown">3 hours</span>.</p>
+    </div>
+
+    <script>
+        // Countdown timer
+        var countdownElement = document.getElementById('countdown');
+        var countdownTime = 3 * 60 * 60; // 3 hours in seconds
+
+        function updateCountdown() {
+            var hours = Math.floor(countdownTime / 3600);
+            var minutes = Math.floor((countdownTime % 3600) / 60);
+            var seconds = countdownTime % 60;
+
+            countdownElement.textContent = hours + ' hours ' + minutes + ' minutes ' + seconds + ' seconds';
+
+            if (countdownTime <= 0) {
+                document.body.innerHTML = '<h1>Website Live Now!</h1>';
+            } else {
+                countdownTime--;
+                setTimeout(updateCountdown, 1000);
+            }
+        }
+
+        updateCountdown();
+    </script>
+
+</body>
+</html>
