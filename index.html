@@ -1,75 +1,277 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Under Maintenance</title>
+<html class="has-navbar-fixed-top">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <meta content="It is a primary school located in Pipaltar, Dhading." name="description">
+  <meta content="Naure smile,naturesmileacademy, naturesmile, Nature smile academy, nature smile dhading,nature smile academy Pipaltar"  name="keywords">
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-        }
+    <!-- <link rel="icon" href="/lo.jpg"/> -->
+    <title>Nature Smile Academy</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.3/dist/css/bulma-carousel.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="style.css" />
 
-        .popup {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-            text-align: center;
-        }
+    <script src="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.3/dist/js/bulma-carousel.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/a076d05399.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
 
-        .countdown {
-            font-size: 1.2em;
-            color: #333;
-        }
-    </style>
-</head>
-<body>
+    <!-- Navigation Bar start -->
+    <nav
+      class="navbar is-fixed-top"
+      role="navigation"
+      aria-label="main navigation"
+    >
+      <div class="navbar-brand">
+        <a class="navbar-item" href="#">
+          <!-- <img src="lo.jpg" width="40" height="90" /> -->
+        </a>
 
-    <div class="popup">
-        <h1>Website Under Maintenance</h1>
-        <p>We apologize for the inconvenience.</p>
-        <p>The website will be live again at 12:00 AM, November 18, Nepal Standard Time.</p>
-        <p>Remaining time: <span id="countdown" class="countdown"></span></p>
-    </div>
+        <a
+          role="button"
+          class="navbar-burger"
+          aria-label="menu"
+          aria-expanded="false"
+          data-target="navbarBasicExample"
+        >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
 
-    <script>
-        // Retrieve target date from localStorage or set a default value
-        var targetDate = localStorage.getItem('targetDate');
-        if (!targetDate) {
-            targetDate = new Date("November 20, 2023 00:00:00 GMT+0545");
-            localStorage.setItem('targetDate', targetDate);
-        } else {
-            targetDate = new Date(targetDate);
-        }
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item text-not-selected">
+            <span class="icon-text">
+              <span class="icon">
+                <i class="fas fa-home"></i>
+              </span>
+              <span>Home</span>
+            </span>
+          </a>
+          <a class="navbar-item text-not-selected">About</a>
+          <a class="navbar-item text-not-selected">Facilities</a>
+        </div>
 
-        function updateCountdown() {
-            var currentDate = new Date();
-            var timeDifference = targetDate - currentDate;
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <a
+              class="navbar-item fab fa-facebook is-medium"
+              href="https://www.facebook.com/emck.simara/"
+            ></a>
+            <a class="navbar-item fab fa-instagram is-medium" href="#"></a>
+            <a class="navbar-item fab fa-whatsapp is-medium" href="#"></a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- Navigation Bar ends-->
 
-            if (timeDifference <= 0) {
-                document.getElementById('countdown').textContent = 'Website Live Now!';
-            } else {
-                var hours = Math.floor(timeDifference / (1000 * 60 * 60));
-                var minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
-                var seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+    <!-- Hero starts -->
 
-                document.getElementById('countdown').textContent =
-                    hours + ' hours ' + minutes + ' minutes ' + seconds + ' seconds';
+    <section class="hero is-light is-fullheight-with-navbar">
+      <!-- Main Section starts -->
+      <!-- image slider start -->
+      <section id="home" class="heroslide">
+        <div class="heroslide-carousel-container">
+          <div id="slider-demo" class="heroslide-carousel">
+            <div class="item-1">
+              <img src="/slide1.jpeg" alt="Slide 1" />
+            </div>
+            <div class="item-2">
+              <img src="/slide2.jpeg" alt="Slide 2" />
+            </div>
+            <!-- <div class="item-3">
+              <img src="slide3.jpeg" alt="Slide 3" />
+            </div> -->
+          </div>
+        </div>
+      </section>
+   
 
-                setTimeout(updateCountdown, 1000);
-            }
-        }
+      <!-- about section start -->
+      <section id="about" class="section">
+        <p class="title is-4">About</p>
+              <!-- Text Card -->
+              <div class="card-1 text-card">
+                <div class="card-content">
+                  <div class="content">
+                    <p class="title is-4">Welcome To Nature Smile Academy 😊</p>
+                    <p>Since 2012 A.D we have been running our school in Pipaltar, Dhading.
+                    </p>
+                  </div>
+                  <br><br>
+                  <div class="container">
+                    <strong class="h1">
+                  </i> Mission :
+                    </strong><br><br>
+                    <p>At our secondary private school, we are dedicated to nurturing young minds, inspiring a passion for learning, and cultivating a supportive community that fosters holistic development. We provide a safe, inclusive, and innovative environment where each student is empowered to discover their potential, embrace diversity, and build a foundation for lifelong success. Our commitment lies in fostering curiosity, creativity, and critical thinking skills, preparing our students to become compassionate, responsible, and contributing members of society. We strive to create an educational experience that goes beyond academics, encouraging the holistic growth of every individual within our vibrant school community.</p><br><br>
+                  </div>
+                  <strong class="h1">
+                    <p>Contact :</p>
 
-        updateCountdown();
-    </script>
+                  </strong><br><br>
+                  <div class="container">        
+                    <table class="table is-fullwidth" style="border: none; background-color: transparent;">
+                    <tr>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><i class="fas fa-map-marker-alt" style="margin-right: 0.5rem; color: #008000;"></i></td>
+                      <td>Pipaltar, Dhading</td>
+                    </tr>
+                    <tr>
+                      <td><i class="fas fa-envelope" style="margin-right: 0.5rem; color: #FF0000;"></i></td>
+                      <td><a href="mailto:your.email@gmail.com">naturesmileacademy65@gmail.com</a></td>
+                    </tr>
+                    <tr>
+                      <td><i class="fas fa-phone-alt" style="margin-right: 0.5rem; color: #008000;"></i></td>
+                      <td>+977-9800000000</td>
+                    </tr>
+                    </table>
+                  </div>
+                </div>
+      </div>
+        
+      </section>
+      <!-- about section end -->
 
-</body>
+      <!-- Facilities Section start -->
+      <section id="facilities" class="section">
+        <p class="title is-4">Facilities</p>
+        <div class="container">
+          <div class="columns is-multiline">
+            <div class="column is-3">
+              <div class="card">
+                <div class="card-image">
+                  <figure class="image is-4by3">
+                    <img src="swimming.jpg" alt="swimming" />
+                  </figure>
+                </div>
+                <div class="card-content">
+                  <div class="content">
+                    <p class="has-text-centered has-text-weight-bold">
+                      Swimming
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="column is-3">
+              <div class="card">
+                <div class="card-image">
+                  <figure class="image is-4by3">
+                    <img src="bus.jpg" alt="bus" />
+                  </figure>
+                </div>
+                <div class="card-content">
+                  <div class="content">
+                    <p class="has-text-centered has-text-weight-bold">Bus</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="column is-3">
+              <div class="card">
+                <div class="card-image">
+                  <figure class="image is-4by3">
+                    <img src="park.jpeg" alt="park" />
+                  </figure>
+                </div>
+                <div class="card-content">
+                  <div class="content">
+                    <p class="has-text-centered has-text-weight-bold">
+                      Park
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="column is-3">
+              <div class="card">
+                <div class="card-image">
+                  <figure class="image is-4by3">
+                    <img src="badminton.jpg" alt="padminton" />
+                  </figure>
+                </div>
+                <div class="card-content">
+                  <div class="content">
+                    <p class="has-text-centered has-text-weight-bold">Badminton</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Facilities section end -->
+      <!-- Main section ends -->
+
+      <!-- Report section start -->
+      <section class="section">
+        <nav class="level">
+          <div class="level-item has-text-centered">
+            <i class="fas fa-user-graduate fa-2x"></i>
+            <div>
+              <p class="title"> 100%</p>
+              <p class="heading pl-3">LEADERSHIP</p>
+            </div>
+          </div>
+          <div class="level-item has-text-centered">
+            <i class="fas fa-university fa-2x"></i>
+            <div>
+              <p class="title"> 100%</p>
+              <p class="heading pl-3">EXCELLENCE</p>
+            </div>
+          </div>
+          
+          <div class="level-item has-text-centered">
+            <i class="fas fa-hands-helping fa-2x"></i>
+            <div>
+              <p class="title"> 100%</p>
+              <p class="heading pl-3"> SERVICE</p>
+            </div>
+          </div>
+          <div class="level-item has-text-centered">
+            <i class=" fas fa-star fa-2x"></i>
+            <div>
+              <p class="title">11</p>
+              <p class="heading pl-3"> YEARS OF</p>
+              <p class="heading pl-3"> EXPERIENCE</p>
+            </div>
+          </div>
+        </nav>
+      </section>
+      <!-- Report section end -->
+    </section>
+    <!-- Hero ends-->
+
+    <!-- go top section start -->
+    <div id="go-up-overlay" class="go-up-overlay">
+        <button id="go-up-button" class="button is-info is-rounded">
+          <i class="fas fa-arrow-up"></i>
+        </button>
+      </div>
+      
+    <!-- go top section end -->
+    <script src="script.js"></script>
+  </body>
 </html>
